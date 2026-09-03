@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
-export default function TaskCard({ title, done }) {
+export default function TaskCard({ title, done, onToggle }) {
   return (
-    <View style={styles.card}>
+    <Pressable onPress={onToggle} style={styles.card}>
       <Text style={styles.title}>{title}</Text>
-      <Text>{done ? 'Done' : 'Pending'}</Text>
-    </View>
+      <Text>{done ? '✅ Done' : '⏳ Pending'}</Text>
+    </Pressable>
   );
 }
 
